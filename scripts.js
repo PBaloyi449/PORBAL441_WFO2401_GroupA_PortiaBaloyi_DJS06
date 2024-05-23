@@ -58,7 +58,10 @@ console.log(products.filter(product => product.product.length <= 5));
 
 //3. Filter out products without prices, convert string prices to numbers, and calculate the total price using reduce.
 const total = products
-  .filter(product => product.price.trim() !== '' && !isNaN(product.price))
+  .filter(product => {
+    const priceStr = String(product.price).trim();
+    return priceStr !== '' && !isNaN(priceStr);
+  })
   .reduce((sum, product) => sum + parseFloat(product.price), 0);
 console.log(total);
 
@@ -79,5 +82,7 @@ console.log(`Highest: ${highestProduct.product}. Lowest: ${lowestProduct.product
 //6. Recreating the products object with keys 'name' and 'cost', maintaining their original values
 const transformedProducts = products.map(product => ({ name: product.product, cost: product.price }));
 console.log(transformedProducts);
+
+
 
 
