@@ -41,3 +41,10 @@ console.log(nonCapeProvinces.length);
 //6. Determining if the name contains an "s"
 const hasSArray = names.map(name => name.includes('S'));
 console.log(hasSArray);
+
+//7. Creating Object Mapping
+const nameProvinceMapping = names.reduce((acc, name, index) => {
+  acc[name] = provinces[index];
+  return acc;
+}, {});
+console.log(nameProvinceMapping);
