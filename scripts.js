@@ -37,3 +37,7 @@ console.log(sortedProvinces);
 //5. Filtering the Cape Provinces
 const nonCapeProvinces = provinces.filter(province => !province.includes('Cape'));
 console.log(nonCapeProvinces.length);
+
+//6. Determining if the name contains an "s"
+const hasSArray = names.map(name => name.includes('S'));
+console.log(hasSArray);
