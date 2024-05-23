@@ -48,3 +48,7 @@ const nameProvinceMapping = names.reduce((acc, name, index) => {
   return acc;
 }, {});
 console.log(nameProvinceMapping);
+
+//Advanced Exercises (Single console.log Execution)
+//1. Logging each product name
+console.log(products.map(product => product.product).join(', '));
