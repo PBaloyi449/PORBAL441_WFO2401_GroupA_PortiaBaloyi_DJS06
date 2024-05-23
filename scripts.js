@@ -52,3 +52,6 @@ console.log(nameProvinceMapping);
 //Advanced Exercises (Single console.log Execution)
 //1. Logging each product name
 console.log(products.map(product => product.product).join(', '));
+
+//2. Filter out products with names longer than 5 characters.
+console.log(products.filter(product => product.product.length <= 5));
