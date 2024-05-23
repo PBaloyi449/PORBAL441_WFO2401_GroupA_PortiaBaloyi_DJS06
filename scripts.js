@@ -65,3 +65,14 @@ console.log(total);
 //4. Concatenate Product Names
 const concatenatedNames = products.reduce((acc, product) => acc + product.product + ' ', '').trim();
 console.log(concatenatedNames);
+
+//5. Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y.
+const validProducts = products
+  .filter(product => product.price.trim() !== '' && !isNaN(product.price))
+  .map(product => ({ ...product, price: parseFloat(product.price) }));
+
+const highestProduct = validProducts.reduce((max, product) => (product.price > max.price ? product : max), validProducts[0]);
+const lowestProduct = validProducts.reduce((min, product) => (product.price < min.price ? product : min), validProducts[0]);
+
+console.log(`Highest: ${highestProduct.product}. Lowest: ${lowestProduct.product}.`);
+
