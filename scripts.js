@@ -61,3 +61,7 @@ const total = products
   .filter(product => product.price.trim() !== '' && !isNaN(product.price))
   .reduce((sum, product) => sum + parseFloat(product.price), 0);
 console.log(total);
+
+//4. Concatenate Product Names
+const concatenatedNames = products.reduce((acc, product) => acc + product.product + ' ', '').trim();
+console.log(concatenatedNames);
