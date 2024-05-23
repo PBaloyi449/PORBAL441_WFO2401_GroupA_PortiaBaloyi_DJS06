@@ -76,3 +76,8 @@ const lowestProduct = validProducts.reduce((min, product) => (product.price < mi
 
 console.log(`Highest: ${highestProduct.product}. Lowest: ${lowestProduct.product}.`);
 
+//6. Recreating the products object with keys 'name' and 'cost', maintaining their original values
+const transformedProducts = products.map(product => ({ name: product.product, cost: product.price }));
+console.log(transformedProducts);
+
+
