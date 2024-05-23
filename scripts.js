@@ -71,14 +71,16 @@ console.log(concatenatedNames);
 
 //5. Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y.
 const validProducts = products
-  .filter(product => product.price.trim() !== '' && !isNaN(product.price))
+  .filter(product => {
+    const priceStr = String(product.price).trim();
+    return priceStr !== '' && !isNaN(priceStr);
+  })
   .map(product => ({ ...product, price: parseFloat(product.price) }));
 
 const highestProduct = validProducts.reduce((max, product) => (product.price > max.price ? product : max), validProducts[0]);
 const lowestProduct = validProducts.reduce((min, product) => (product.price < min.price ? product : min), validProducts[0]);
 
 console.log(`Highest: ${highestProduct.product}. Lowest: ${lowestProduct.product}.`);
-
 //6. Recreating the products object with keys 'name' and 'cost', maintaining their original values
 const transformedProducts = products.map(product => ({ name: product.product, cost: product.price }));
 console.log(transformedProducts);
