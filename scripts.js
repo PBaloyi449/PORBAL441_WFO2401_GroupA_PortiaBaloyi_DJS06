@@ -16,8 +16,8 @@ const products = [
 
 //1. ForEach Basics
 // Log each name and each province
-names.forEach(name => console.log(name));
-provinces.forEach(province => console.log(province));
+names.forEach(name => console.log(`Name: ${name}`));
+provinces.forEach(province => console.log(`Province: ${province}`));
 
 // Log each name with a matching province
 names.forEach((name, index) => console.log(`${name} (${provinces[index]})`));
@@ -81,6 +81,7 @@ const highestProduct = validProducts.reduce((max, product) => (product.price > m
 const lowestProduct = validProducts.reduce((min, product) => (product.price < min.price ? product : min), validProducts[0]);
 
 console.log(`Highest: ${highestProduct.product}. Lowest: ${lowestProduct.product}.`);
+
 //6. Recreating the products object with keys 'name' and 'cost', maintaining their original values
 const transformedProducts = products.map(product => ({ name: product.product, cost: product.price }));
 console.log(transformedProducts);
