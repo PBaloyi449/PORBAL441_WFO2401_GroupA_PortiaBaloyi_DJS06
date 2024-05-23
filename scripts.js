@@ -29,3 +29,7 @@ console.log(upperCaseProvinces);
 //3. Name Lengths
 const nameLengths = names.map(name => name.length);
 console.log(nameLengths);
+
+//4. Alphabetically Sorting
+const sortedProvinces = [...provinces].sort();
+console.log(sortedProvinces);
